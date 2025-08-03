@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>RISProtec - Calcul du RIS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <div class="header-title">
+      <img src="logo.png" alt="Logo Protection Civile" class="logo">
+      <h1>| 🛡️ RISProtec</h1>
+    </div>
+
+    <form id="risForm">
+      <label>Nombre de participants (P1)</label>
+      <input type="number" id="p1" required>
+
+      <label>Type d’activité (P2)</label>
+      <select id="p2" required>
+        <option value="0.1">Faible - Public assis : spectacle, cérémonie culturelle, réunion publique, restauration, rendez-vous sportif</option>
+        <option value="0.3">Modéré - Public debout : cérémonie culturelle, réunion publique, restauration, exposition, foire, salon, comice agricole</option>
+        <option value="0.5">Moyen - Public debout : spectacle avec public statique, fête foraine, rdv sportif avec protection du public</option>
+        <option value="0.7">Élevé - Public debout : spectacle avec public dynamique, danse, féria, fête votive, carnaval, spectacle de rue, grande parade, rdv sportif sans protection</option>
+      </select>
+
+      <label>Environnement / accessibilité (E1)</label>
+      <select id="e1" required>
+        <option value="0.1">Faible - Structure permanente, voies publiques, conditions d'accès aisées</option>
+        <option value="0.3">Modéré - Structure non permanente (gradins,tribunes, chapiteaux), espace naturel < 2 Hectares, brancardage 150m < longueur < 300m, terrain en pente sur plus de 100m</option>
+        <option value="0.5">Moyen - Espace naturel 2 < surface < 5 hectares, brancardage 300m < longueur < 600m, en pente sur plus de 150m</option>
+        <option value="0.7">Elevé - Espace naturel > 5 Hectares, brancardage > 600m, terrain en pente sur plus de 300m, (talus, escaliers, voies non carrossables), progression des secours rendue difficile par le public</option>
+      </select>
+
+      <label>Délai d’intervention des secours (E2)</label>
+      <select id="e2" required>
+        <option value="0.1">Faible (≤10 min)</option>
+        <option value="0.3">Modéré (10 à 20 min)</option>
+        <option value="0.5">Moyen (20 à 30 min)</option>
+        <option value="0.7">Élevé (> 30 min)</option>
+      </select>
+
+      <button type="submit">🧮 Calculer le RIS</button>
+    </form>
+
+    <div id="result"></div>
+    <h2>📜 Historique</h2>
+    <ul id="history"></ul>
+  </div>
+</body>
+</html>
